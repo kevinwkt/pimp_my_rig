@@ -6,6 +6,11 @@ menu_options_display() {
     printf "\n1) $(log_menu_item "${STATUS[1]}" 'Check Script Deps' 'Done')"
     printf "\n2) $(log_menu_item "${STATUS[2]}" 'Set Editor\t' "$EDITOR")"
     printf "\n3) $(log_menu_item "${STATUS[3]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n4) $(log_menu_item "${STATUS[4]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n5) $(log_menu_item "${STATUS[5]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n6) $(log_menu_item "${STATUS[6]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n7) $(log_menu_item "${STATUS[7]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n8) $(log_menu_item "${STATUS[8]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
     printf "\n10) Finish\n"
 }
 
