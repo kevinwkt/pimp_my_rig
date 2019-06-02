@@ -26,7 +26,7 @@ BOLD_PURPLE=${BOLD}${PURPLE}
 BOLD_CYAN=${BOLD}${CYAN}
 BOLD_WHITE=${BOLD}${WHITE}
 
-# Editors, defaults to vim.
+# Editors, defaults to vim or nano.
 if [[ -e /usr/bin/vim ]]; then
   EDITOR='vim'
 elif [[ -e /usr/bin/nano ]]; then
@@ -40,7 +40,7 @@ GNOME=0
 KDE=0
 MATE=0
 
-# Keyboard Layout.
+# Keyboard Layout, defaults to US.
 KEYBOARD_LAYOUT="US"
 
 # Log functions.
@@ -62,7 +62,7 @@ log_info() {
   echo "$@" | fold -sw $(( $terminal_width - 1 ))
 }
 
-log_checkbox() {
+main_menu_checkbox() {
   if [[ $1 -eq 1 ]]; then
       log_info "${BOLD_WHITE}[X]${RESET}"
   else
@@ -70,17 +70,17 @@ log_checkbox() {
   fi
 }
 
-log_menu_item() {
+main_menu_item() {
   if [[ $1 == 1 ]]; then
-      log_info "$(log_checkbox "$1") ${BOLD_GREEN}$2${RESET} \t\t $3"
+      log_info "$(main_menu_checkbox "$1") ${BOLD_GREEN}$2${RESET} \t\t $3"
   else
-      log_info "$(log_checkbox "$1") ${BOLD_RED}$2${RESET} \t\t $3"
+      log_info "$(main_menu_checkbox "$1") ${BOLD_RED}$2${RESET} \t\t $3"
   fi
 }
 
 # Utility functions.
 contains_element() {
-  for i in "${@:2}"; do [[ $i == $1 ]] && break; done; 
+  for i in "${@:2}"; do [[ $i == $1 ]] && return 1; done; return 0; 
 }
 
 package_install() {

@@ -2,15 +2,15 @@
 # Style Guide: https://google.github.io/styleguide/shell.xml.
 
 # Menu.
-menu_options_display() {
-    printf "\n1) $(log_menu_item "${STATUS[1]}" 'Check Script Deps' 'Done')"
-    printf "\n2) $(log_menu_item "${STATUS[2]}" 'Set Editor\t' "$EDITOR")"
-    printf "\n3) $(log_menu_item "${STATUS[3]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
-    printf "\n4) $(log_menu_item "${STATUS[4]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
-    printf "\n5) $(log_menu_item "${STATUS[5]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
-    printf "\n6) $(log_menu_item "${STATUS[6]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
-    printf "\n7) $(log_menu_item "${STATUS[7]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
-    printf "\n8) $(log_menu_item "${STATUS[8]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+main_menu_display() {
+    printf "\n1) $(main_menu_item "${STATUS[1]}" 'Check Script Deps' 'Done')"
+    printf "\n2) $(main_menu_item "${STATUS[2]}" 'Set Editor\t' "$EDITOR")"
+    printf "\n3) $(main_menu_item "${STATUS[3]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n4) $(main_menu_item "${STATUS[4]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n5) $(main_menu_item "${STATUS[5]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n6) $(main_menu_item "${STATUS[6]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n7) $(main_menu_item "${STATUS[7]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
+    printf "\n8) $(main_menu_item "${STATUS[8]}" 'Set Keyboard Layout' "$KEYBOARD_LAYOUT")"
     printf "\n10) Finish\n"
 }
 
@@ -78,7 +78,7 @@ run() {
 
   log_info "Starting installation..."
   while true; do
-    menu_options_display
+    main_menu_display
     read OPTION
     case "$OPTION" in
       1)
