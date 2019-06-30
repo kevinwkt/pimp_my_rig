@@ -55,6 +55,7 @@ set_editor() {
   done
 }
 
+#=
 verify_boot_mode() {
   if [[ ! -e /sys/firmware/efi/efivars ]]; then
     log_error "Error! System may be booted in BIOS or CSM mode." \
@@ -64,6 +65,12 @@ verify_boot_mode() {
   fi
 }
 
+# Partition the disks.
+partition_disks() {
+  
+}
+
+# Finish.
 stop_run() {
   echo "${BOLD_GREEN}INSTALL COMPLETED${RESET}"
   exit 0
